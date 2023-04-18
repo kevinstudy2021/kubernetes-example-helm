@@ -4,11 +4,11 @@ helm:
     value: kevinstudy/frontend
     forcestring: true
   - name: frontend.tag
-    value: main-708d0a7
+    value: main-23fb808
     forcestring: true
   - name: backend.image
     value: kevinstudy/backend
     forcestring: true
   - name: backend.tag
-    value: main-708d0a7
+    value: main-23fb808
     forcestring: true
