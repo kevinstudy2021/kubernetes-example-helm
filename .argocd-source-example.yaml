@@ -10,5 +10,5 @@ helm:
     value: kevinstudy/backend
     forcestring: true
   - name: backend.tag
-    value: main-23fb808
+    value: main-baec166
     forcestring: true
