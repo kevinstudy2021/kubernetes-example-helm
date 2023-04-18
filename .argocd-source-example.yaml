@@ -1,0 +1,14 @@
+helm:
+  parameters:
+  - name: frontend.image
+    value: kevinstudy/frontend
+    forcestring: true
+  - name: frontend.tag
+    value: main-708d0a7
+    forcestring: true
+  - name: backend.image
+    value: kevinstudy/backend
+    forcestring: true
+  - name: backend.tag
+    value: main-708d0a7
+    forcestring: true
