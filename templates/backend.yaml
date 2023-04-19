@@ -20,7 +20,7 @@ spec:
         image: "{{ .Values.backend.image }}:{{ .Values.backend.tag }}"
         imagePullPolicy: Always
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
         env:
         - name: DATABASE_URI
           value: "{{ .Values.database.uri }}"
@@ -37,8 +37,8 @@ spec:
             cpu: "256m"
         readinessProbe: 
           httpGet:
-            path: /healthy
-            port: 5000
+            path: /healthz
+            port: 8080
             scheme: HTTP
           initialDelaySeconds: 10
           failureThreshold: 5
@@ -47,8 +47,8 @@ spec:
           timeoutSeconds: 1
         livenessProbe: 
           httpGet:
-            path: /healthy
-            port: 5000
+            path: /healthz
+            port: 8080
             scheme: HTTP
           failureThreshold: 5
           periodSeconds: 10
@@ -56,8 +56,8 @@ spec:
           timeoutSeconds: 1
         startupProbe: 
           httpGet:
-            path: /healthy
-            port: 5000
+            path: /healthz
+            port: 8080
             scheme: HTTP
           initialDelaySeconds: 10
           failureThreshold: 5
@@ -76,5 +76,5 @@ spec:
   selector:
     app: backend
   ports:
-  - port: 5000
-    targetPort: 5000
+  - port: 8080
+    targetPort: 8080
